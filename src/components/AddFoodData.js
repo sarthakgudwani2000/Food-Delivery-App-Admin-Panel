@@ -4,7 +4,7 @@ import './AddFoodData.css'
 import { db, storage } from '../Firebase/FirebaseConfig'
 import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-// import Navbar from './Navbar';
+import Navbar from './Navbar';
 //
 const AddFoodData = () => {
     const [foodName, setFoodName] = useState('')
@@ -92,7 +92,7 @@ const AddFoodData = () => {
     // console.log(new Date().getTime().toString())
     return (
         <div className="food-outermost">
-            {/* <Navbar /> */}
+            <Navbar />
             <div className="form-outer">
                 <h1>Add Food Data</h1>
                 <form className="form-inner">
@@ -131,13 +131,13 @@ const AddFoodData = () => {
                     <div className="form-row">
                         <div className="form-col">
                             <label>Food Category</label>
-                            <select name="food_category" onChange={(e) => { setFoodCategory(e.target.value) }}>
+                                                     <select name="food_category" onChange={(e) => { setFoodCategory(e.target.value) }}>
                                 <option value="null">Select Food Category</option>
-                                <option value="veg">Indian</option>
-                                <option value="non-veg">Chineese</option>
-                                <option value="non-veg">Italian</option>
-                                <option value="non-veg">Mexican</option>
-                                <option value="non-veg">American</option>
+                                <option value="Indian">Indian</option>
+                                <option value="Chineese">Chineese</option>
+                                <option value="Italian">Italian</option>
+                                <option value="Mexican">Mexican</option>
+                                <option value="American">American</option>
                             </select>
                         </div>
                         <div className="form-col">
